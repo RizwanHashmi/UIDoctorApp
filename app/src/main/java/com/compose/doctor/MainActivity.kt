@@ -7,10 +7,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.view.WindowCompat
 import com.compose.doctor.ui.theme.DoctorAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,22 +21,20 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            DoctorAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+            DoctorAppTheme/*(
+                dynamicColor = false
+            )*/ {
+               /* Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = Color.Transparent // 👈 FORCE TRANSPARENT ROOT
+                ) {*/
                     HomeScreen()
-                }
+//                }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
 @Preview(showBackground = true)
 @Composable

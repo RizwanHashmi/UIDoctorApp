@@ -43,10 +43,14 @@ fun PopularDoctorsSection() {
     val doctorList = rememberSaveable {
         listOf(
             DoctorDetails("Dr. Tyler Smith", "Neurologist", "4.9", "$20", R.drawable.img_doctor_1),
-            DoctorDetails("Dr. Tailor Some", "Neurologist", "4.9", "$20", R.drawable.img_doctor_2),
             DoctorDetails("Dr. Kunal Kristen", "Neurologist", "4.9", "$20", R.drawable.img_doctory_3),
+            DoctorDetails("Dr. Tailor Some", "Neurologist", "4.9", "$20", R.drawable.img_doctor_2),
             DoctorDetails("Dr. Oven Pop", "Neurologist", "4.9", "$20", R.drawable.img_doctor_1),
-        )
+            DoctorDetails("Dr. Kunal Kristen", "Neurologist", "4.9", "$20", R.drawable.img_doctory_3),
+            DoctorDetails("Dr. Tailor Some", "Neurologist", "4.9", "$20", R.drawable.img_doctor_2),
+            DoctorDetails("Dr. Oven Pop", "Neurologist", "4.9", "$20", R.drawable.img_doctor_1),
+
+            )
     }
 
 

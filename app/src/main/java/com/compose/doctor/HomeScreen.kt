@@ -1,17 +1,20 @@
 package com.compose.doctor
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.compose.doctor.composable_utils.BottomNavigationBar
+import com.compose.doctor.composable_utils.CustomBottomNavigation
 import com.compose.doctor.composable_utils.OfferCard
 import com.compose.doctor.composable_utils.PopularDoctorsSection
 import com.compose.doctor.composable_utils.TopBar
@@ -19,7 +22,16 @@ import com.compose.doctor.composable_utils.TopBar
 @Composable
 fun HomeScreen() {
     Scaffold(
-        bottomBar = { BottomNavigationBar() }
+        modifier = Modifier
+            .fillMaxSize()
+            .statusBarsPadding(),
+        contentWindowInsets = WindowInsets(0),
+        bottomBar = {
+            CustomBottomNavigation()
+            },
+        containerColor = Color.Transparent, // 👈 still keep this
+
+
     ) { padding ->
         Column(
             modifier = Modifier
@@ -35,3 +47,5 @@ fun HomeScreen() {
         }
     }
 }
+
+
